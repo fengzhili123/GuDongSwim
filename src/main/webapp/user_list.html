@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎访问</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main2.css">
+    <script src="js/jquery-1.12.2.min.js" type="application/javascript"></script>
+    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="layui/layui.js" type="application/javascript"></script>
+</head>
+<style type="text/css">
+</style>
+<body>
+<!--导航-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!--小屏幕导航按纽和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">咕咚Admin</a>
+        </div>
+
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台首页</a></li>
+                <li class="active"><a href="user_list.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a>
+                </li>
+                <li><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="tag.html"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;标签管理</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="#"><span class="glyphicon glyphicon-move"></span>&nbsp;&nbsp;前台主页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人中心</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                    </ul>
+                </li>
+                <li><a href="#bbs"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--导航-->
+<div class="container">
+    <div class="col-md-2">
+        <div class="list-group">
+            <a href="user_list.html" class="list-group-item active">用户管理</a>
+            <a href="user_search.html" class="list-group-item">用户搜索</a>
+            <a href="" role="button" class="list-group-item" data-toggle="modal" data-target="#myModal">用户中心</a>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="page-header">
+            <h1>用户管理</h1>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="user_list.html">用户信息</a>
+            </li>
+            <li>
+                <a href="user_search.html">用户搜索</a>
+            </li>
+            <li>
+                <a href="" role="button" data-toggle="modal" data-target="#myModal">用户中心</a>
+            </li>
+        </ul>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>zhangsan</td>
+                    <td>21432432</td>
+                    <td>
+                        <div role="presentation" class="dropdown">
+                            <button class="btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                操作 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">编辑</a></li>
+                                <li><a href="#">删除</a></li>
+                                <li><a href="#">锁定</a></li>
+                                <li><a href="#">修改密码</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td>zhangsan</td>
+                    <td>21432432</td>
+                    <td>
+                        <div role="presentation" class="dropdown">
+                            <button class="btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                操作 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--添加用户-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="addname">用户名</label>
+                        <input type="text" id="addname" class="form-control" placeholder="用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="addname">用户密码</label>
+                        <input type="text" id="addname" class="form-control" placeholder="用户密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="addname">确认</label>
+                        <input type="text" id="addname" class="form-control" placeholder="确认密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="addname">邮箱</label>
+                        <input type="email" id="addname" class="form-control" placeholder="请输入邮箱">
+                    </div>
+                    <div class="form-group">
+                        <label for="addname">用户组</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">huiyuan</option>
+                            <option value="">huiyuan</option>
+                            <option value="">huiyuan</option>
+                            <option value="">huiyuan</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加用户-->
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    fjdlsfkd&nbsp; &nbsp;jfjdsjfaldksjflkewjrj
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+</body>
+</html>
